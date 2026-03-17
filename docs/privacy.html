@@ -15,103 +15,26 @@
       --card: #ffffff;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.7;
-    }
-    header {
-      background: var(--navy);
-      color: #fff;
-      padding: 40px 24px 32px;
-      text-align: center;
-    }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+    header { background: var(--navy); color: #fff; padding: 40px 24px 32px; text-align: center; }
     header .coin { font-size: 48px; margin-bottom: 12px; }
     header h1 { font-size: 28px; font-weight: 800; margin-bottom: 4px; }
     header p { color: rgba(255,255,255,0.6); font-size: 14px; }
-    .lang-toggle {
-      display: flex;
-      justify-content: center;
-      gap: 12px;
-      padding: 20px;
-      background: var(--card);
-      border-bottom: 1px solid var(--border);
-    }
-    .lang-btn {
-      padding: 8px 24px;
-      border-radius: 20px;
-      border: 2px solid var(--teal);
-      background: transparent;
-      color: var(--teal);
-      font-size: 14px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all 0.2s;
-    }
-    .lang-btn.active {
-      background: var(--teal);
-      color: #fff;
-    }
-    .container {
-      max-width: 760px;
-      margin: 0 auto;
-      padding: 40px 24px 80px;
-    }
-    .section {
-      background: var(--card);
-      border-radius: 14px;
-      padding: 28px;
-      margin-bottom: 16px;
-      border: 1px solid var(--border);
-    }
-    .section h2 {
-      font-size: 17px;
-      font-weight: 700;
-      color: var(--teal);
-      margin-bottom: 12px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-    .section p, .section li {
-      font-size: 14px;
-      color: #374151;
-      margin-bottom: 8px;
-    }
-    .section ul {
-      padding-left: 20px;
-    }
+    .lang-toggle { display: flex; justify-content: center; gap: 12px; padding: 20px; background: var(--card); border-bottom: 1px solid var(--border); }
+    .lang-btn { padding: 8px 24px; border-radius: 20px; border: 2px solid var(--teal); background: transparent; color: var(--teal); font-size: 14px; font-weight: 600; cursor: pointer; transition: all 0.2s; }
+    .lang-btn.active { background: var(--teal); color: #fff; }
+    .container { max-width: 760px; margin: 0 auto; padding: 40px 24px 80px; }
+    .section { background: var(--card); border-radius: 14px; padding: 28px; margin-bottom: 16px; border: 1px solid var(--border); }
+    .section h2 { font-size: 17px; font-weight: 700; color: var(--teal); margin-bottom: 12px; }
+    .section p, .section li { font-size: 14px; color: #374151; margin-bottom: 8px; }
+    .section ul { padding-left: 20px; }
     .section li { margin-bottom: 6px; }
-    .highlight {
-      background: #E8F5F4;
-      border-left: 4px solid var(--teal);
-      border-radius: 8px;
-      padding: 16px 20px;
-      margin-bottom: 16px;
-    }
-    .highlight p {
-      font-size: 15px;
-      font-weight: 600;
-      color: var(--navy);
-      margin: 0;
-    }
-    .updated {
-      text-align: center;
-      font-size: 13px;
-      color: var(--muted);
-      margin-bottom: 32px;
-    }
-    .contact {
-      text-align: center;
-      padding: 24px;
-      background: var(--navy);
-      border-radius: 14px;
-      color: rgba(255,255,255,0.75);
-      font-size: 14px;
-    }
+    .highlight { background: #E8F5F4; border-left: 4px solid var(--teal); border-radius: 8px; padding: 16px 20px; margin-bottom: 16px; }
+    .highlight p { font-size: 15px; font-weight: 600; color: var(--navy); margin: 0; }
+    .updated { text-align: center; font-size: 13px; color: var(--muted); margin-bottom: 32px; }
+    .contact { text-align: center; padding: 24px; background: var(--navy); border-radius: 14px; color: rgba(255,255,255,0.75); font-size: 14px; }
     .contact a { color: var(--teal); text-decoration: none; }
-    [lang-content="fr"] { display: none; }
+    .hidden { display: none; }
   </style>
 </head>
 <body>
@@ -123,25 +46,21 @@
 </header>
 
 <div class="lang-toggle">
-  <button class="lang-btn active" onclick="setLang('en')">English</button>
-  <button class="lang-btn" onclick="setLang('fr')">Français</button>
+  <button class="lang-btn active" id="btn-en" onclick="setLang('en')">English</button>
+  <button class="lang-btn" id="btn-fr" onclick="setLang('fr')">Français</button>
 </div>
 
-<!-- ═══════════════════════════════════════════════════════ ENGLISH ══ -->
-<div class="container" lang-content="en">
-
+<!-- ENGLISH -->
+<div id="content-en" class="container">
   <p class="updated">Last updated: March 2026 · Dernière mise à jour: mars 2026</p>
-
   <div class="highlight">
     <p>🔒 Payday Planner does not collect, store, or share any personal data. Everything stays on your device.</p>
   </div>
-
   <div class="section">
     <h2>📋 Overview</h2>
     <p>Payday Planner ("the App") is a personal finance tool designed to help individuals take control of their budget — one payday at a time. This Privacy Policy explains how we handle your information.</p>
     <p>By using Payday Planner, you agree to the practices described in this policy.</p>
   </div>
-
   <div class="section">
     <h2>💾 Data Storage</h2>
     <p>All data you enter into Payday Planner — including your net pay, bills, payments, and budget information — is stored <strong>locally on your device only</strong>, using your browser's localStorage or the app's local storage.</p>
@@ -151,7 +70,6 @@
       <li>Your data is never sent to Anthropic, Apple, or any third party.</li>
     </ul>
   </div>
-
   <div class="section">
     <h2>🚫 Data We Do NOT Collect</h2>
     <p>We do not collect any of the following:</p>
@@ -164,7 +82,6 @@
       <li>Cookies or tracking technologies</li>
     </ul>
   </div>
-
   <div class="section">
     <h2>🔐 Security</h2>
     <p>Since all data is stored locally on your device, the security of your information depends on the security of your device. We recommend:</p>
@@ -174,54 +91,44 @@
       <li>Keeping your device's operating system up to date</li>
     </ul>
   </div>
-
   <div class="section">
     <h2>👶 Children's Privacy</h2>
-    <p>Payday Planner is not directed at children under the age of 13. We do not knowingly collect any information from children. If you believe a child has entered personal information, please contact us so we can address it.</p>
+    <p>Payday Planner is not directed at children under the age of 13. We do not knowingly collect any information from children. If you believe a child has entered personal information, please contact us.</p>
   </div>
-
   <div class="section">
     <h2>🔄 Third-Party Services</h2>
     <p>Payday Planner does not integrate with any third-party services, analytics platforms, or advertising networks. No data is shared with any outside party.</p>
   </div>
-
   <div class="section">
     <h2>📝 Changes to This Policy</h2>
     <p>We may update this Privacy Policy from time to time. Any changes will be reflected on this page with an updated date. We encourage you to review this policy periodically.</p>
   </div>
-
   <div class="contact">
     <p>Questions about this policy?</p>
-    <p style="margin-top:8px;">Contact us at <a href="/cdn-cgi/l/email-protection#28445d415b4a5a415e495b684f45494144064b4745"><span class="__cf_email__" data-cfemail="f599809c8697879c839486b59298949c99db969a98">[email&#160;protected]</span></a></p>
+    <p style="margin-top:8px;">Contact us at <a href="mailto:support@payday-manager.com">support@payday-manager.com</a></p>
   </div>
-
 </div>
 
-<!-- ══════════════════════════════════════════════════════ FRANÇAIS ══ -->
-<div class="container" lang-content="fr">
-
+<!-- FRANÇAIS -->
+<div id="content-fr" class="container hidden">
   <p class="updated">Dernière mise à jour: mars 2026</p>
-
   <div class="highlight">
     <p>🔒 Payday Planner ne collecte, ne stocke ni ne partage aucune donnée personnelle. Tout reste sur votre appareil.</p>
   </div>
-
   <div class="section">
     <h2>📋 Aperçu</h2>
     <p>Payday Planner (« l'Application ») est un outil de finance personnelle conçu pour aider les individus à prendre le contrôle de leur budget — une paie à la fois. Cette politique de confidentialité explique comment nous traitons vos informations.</p>
     <p>En utilisant Payday Planner, vous acceptez les pratiques décrites dans cette politique.</p>
   </div>
-
   <div class="section">
     <h2>💾 Stockage des données</h2>
-    <p>Toutes les données que vous saisissez dans Payday Planner — y compris votre salaire net, vos factures, paiements et informations budgétaires — sont stockées <strong>localement sur votre appareil uniquement</strong>, en utilisant le localStorage de votre navigateur ou le stockage local de l'application.</p>
+    <p>Toutes les données que vous saisissez dans Payday Planner — y compris votre salaire net, vos factures, paiements et informations budgétaires — sont stockées <strong>localement sur votre appareil uniquement</strong>.</p>
     <ul>
       <li>Nous n'utilisons aucun serveur ou base de données externe.</li>
       <li>Nous ne transmettons pas vos données sur Internet.</li>
       <li>Vos données ne sont jamais envoyées à Anthropic, Apple ou à un tiers.</li>
     </ul>
   </div>
-
   <div class="section">
     <h2>🚫 Données que nous ne collectons PAS</h2>
     <p>Nous ne collectons aucune des informations suivantes :</p>
@@ -234,38 +141,41 @@
       <li>Cookies ou technologies de suivi</li>
     </ul>
   </div>
-
   <div class="section">
     <h2>🔐 Sécurité</h2>
     <p>Puisque toutes les données sont stockées localement sur votre appareil, la sécurité de vos informations dépend de la sécurité de votre appareil. Nous recommandons :</p>
     <ul>
       <li>D'utiliser un code d'accès ou un verrou biométrique</li>
-      <li>D'exporter régulièrement une sauvegarde via la fonction d'exportation intégrée de l'application</li>
+      <li>D'exporter régulièrement une sauvegarde via la fonction d'exportation intégrée</li>
       <li>De maintenir le système d'exploitation de votre appareil à jour</li>
     </ul>
   </div>
-
   <div class="section">
     <h2>👶 Confidentialité des enfants</h2>
     <p>Payday Planner ne s'adresse pas aux enfants de moins de 13 ans. Nous ne collectons sciemment aucune information auprès des enfants. Si vous pensez qu'un enfant a saisi des informations personnelles, veuillez nous contacter.</p>
   </div>
-
   <div class="section">
     <h2>🔄 Services tiers</h2>
     <p>Payday Planner ne s'intègre à aucun service tiers, plateforme d'analyse ou réseau publicitaire. Aucune donnée n'est partagée avec une partie externe.</p>
   </div>
-
   <div class="section">
     <h2>📝 Modifications de cette politique</h2>
-    <p>Nous pouvons mettre à jour cette politique de confidentialité de temps à autre. Toute modification sera reflétée sur cette page avec une date mise à jour. Nous vous encourageons à consulter cette politique périodiquement.</p>
+    <p>Nous pouvons mettre à jour cette politique de confidentialité de temps à autre. Toute modification sera reflétée sur cette page avec une date mise à jour.</p>
   </div>
-
   <div class="contact">
     <p>Des questions sur cette politique?</p>
-    <p style="margin-top:8px;">Contactez-nous à <a href="/cdn-cgi/l/email-protection#b3dfc6dac0d1c1dac5d2c0f3d4ded2dadf9dd0dcde"><span class="__cf_email__" data-cfemail="4a263f23392838233c2b390a2d272b232664292527">[email&#160;protected]</span></a></p>
+    <p style="margin-top:8px;">Contactez-nous à <a href="mailto:support@payday-manager.com">support@payday-manager.com</a></p>
   </div>
-
 </div>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-  function setLang(la
+<script>
+  function setLang(lang) {
+    document.getElementById('content-en').className = lang === 'en' ? 'container' : 'container hidden';
+    document.getElementById('content-fr').className = lang === 'fr' ? 'container' : 'container hidden';
+    document.getElementById('btn-en').className = lang === 'en' ? 'lang-btn active' : 'lang-btn';
+    document.getElementById('btn-fr').className = lang === 'fr' ? 'lang-btn active' : 'lang-btn';
+  }
+</script>
+
+</body>
+</html>
