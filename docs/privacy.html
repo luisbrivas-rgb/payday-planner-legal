@@ -5,15 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Privacy Policy — Payday Manager</title>
   <style>
-    :root {
-      --navy: #1A1A2E;
-      --teal: #048A81;
-      --bg: #F7F9FC;
-      --text: #1A1A2E;
-      --muted: #6B7280;
-      --border: #E0E6ED;
-      --card: #ffffff;
-    }
+    :root { --navy: #1A1A2E; --teal: #048A81; --bg: #F7F9FC; --text: #1A1A2E; --muted: #6B7280; --border: #E0E6ED; --card: #ffffff; }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
     header { background: var(--navy); color: #fff; padding: 40px 24px 32px; text-align: center; }
@@ -63,11 +55,11 @@
   </div>
   <div class="section">
     <h2>💾 Data Storage</h2>
-    <p>All data you enter into Payday Manager — including your net pay, bills, payments, and budget information — is stored <strong>locally on your device only</strong>, using your browser's localStorage or the app's local storage.</p>
+    <p>All data you enter into Payday Manager — including your net pay, bills, payments, and budget information — is stored <strong>locally on your device only</strong>, using the app's local storage.</p>
     <ul>
       <li>We do not use any external servers or databases.</li>
       <li>We do not transmit your data over the internet.</li>
-      <li>Your data is never sent to Anthropic, Apple, or any third party.</li>
+      <li>Your data is never sent to Apple or any third party.</li>
     </ul>
   </div>
   <div class="section">
@@ -105,7 +97,7 @@
   </div>
   <div class="contact">
     <p>Questions about this policy?</p>
-    <p style="margin-top:8px;">Contact us at <a href="/cdn-cgi/l/email-protection#20535550504f5254605041594441590d4d414e414745520e434f4d"><span class="__cf_email__" data-cfemail="50232520203f2224102031293431297d3d313e313735227e333f3d">[email&#160;protected]</span></a></p>
+    <p style="margin-top:8px;">Contact us at <a href="mailto:support@payday-manager.com">support&#64;payday-manager&#46;com</a></p>
   </div>
 </div>
 
@@ -126,7 +118,7 @@
     <ul>
       <li>Nous n'utilisons aucun serveur ou base de données externe.</li>
       <li>Nous ne transmettons pas vos données sur Internet.</li>
-      <li>Vos données ne sont jamais envoyées à Anthropic, Apple ou à un tiers.</li>
+      <li>Vos données ne sont jamais envoyées à Apple ou à un tiers.</li>
     </ul>
   </div>
   <div class="section">
@@ -164,10 +156,17 @@
   </div>
   <div class="contact">
     <p>Des questions sur cette politique?</p>
-    <p style="margin-top:8px;">Contactez-nous à <a href="/cdn-cgi/l/email-protection#4b383e3b3b24393f0b3b2a322f2a3266262a252a2c2e3965282426"><span class="__cf_email__" data-cfemail="a5d6d0d5d5cad7d1e5d5c4dcc1c4dc88c8c4cbc4c2c0d78bc6cac8">[email&#160;protected]</span></a></p>
+    <p style="margin-top:8px;">Contactez-nous à <a href="mailto:support@payday-manager.com">support&#64;payday-manager&#46;com</a></p>
   </div>
 </div>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
   function setLang(lang) {
-    document.getElementById('
+    document.getElementById('content-en').classList.toggle('hidden', lang !== 'en');
+    document.getElementById('content-fr').classList.toggle('hidden', lang !== 'fr');
+    document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+    document.getElementById('btn-fr').classList.toggle('active', lang === 'fr');
+  }
+</script>
+</body>
+</html>
